@@ -1,0 +1,282 @@
+/* Base lock */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #FAF3E6;  /* warm cream parchment */
+}
+
+
+/* Welcome Screen */
+.welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+
+.welcome-card {
+  width: 900px;
+  max-width: 100%;
+  padding: 80px 90px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, #ffffff, #fbf7f1);
+  box-shadow: 0 36px 90px rgba(0,0,0,0.14);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-title {
+  font-size: 52px;
+  line-height: 1.15;
+  margin-bottom: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.welcome-points {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 56px;
+}
+
+.point {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.point h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.point p {
+  margin: 6px 0 0;
+  color: #555;
+  font-size: 26px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.icon {
+  font-size: 34px;
+  margin-top: 4px;
+}
+
+.welcome-btn {
+  width: 100%;
+  padding: 22px 0;
+  border-radius: 26px;
+  border: none;
+  font-size: 28px;
+  background: #8b1e1e;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+
+.content {
+  width: 100%;
+  max-width: 1050px; /* single uniform width */
+}
+
+
+
+/* App container */
+.container {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
+
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   gap: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.subtitle {
+  color: #777;
+  margin-bottom: 28px;
+  font-size: 30px;
+}
+
+
+
+
+/* Emotion tile */
+.tile {
+  border-radius: 28px;
+  padding: 36px 18px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.10);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: white;
+}
+
+.tile:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+.emoji {
+  font-size: 94px;
+}
+
+.label {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Detail cards */
+.card {
+  border-radius: 26px;
+  padding: 40px 44px;
+  margin: 0 auto 28px auto;
+  max-width: 1000px;
+  background: linear-gradient(180deg, #ffffff, #faf7f2);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* Shloka */
+.shloka {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 34px;
+  text-align: center;
+  line-height: 1.9;
+  background: linear-gradient(180deg, #fffaf0, #f4ead9);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  color: #8b1e1e;
+}
+
+/* Thought & Meaning */
+.content-text {
+  font-size: 32px;
+  line-height: 1.9;
+  margin: 0;
+  color: #2b2b2b;
+}
+
+/* Labels */
+small {
+  display: block;
+  font-size: 24px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9a8f80;
+  margin-bottom: 8px;
+}
+
+/* Back button */
+.back {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  font-size: 30px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  color: #6f6558;
+}
+
+/* Background breathing animation */
+@keyframes bgBreath {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.welcome-bg {
+  background: linear-gradient(
+    120deg,
+    #fefcf8,
+    #f3efe8,
+    #ece4d6,
+    #f7f3ec
+  );
+  background-size: 300% 300%;
+  animation: bgBreath 18s ease-in-out infinite;
+}
+/*loading spiner on detail screen insstead of blank screen till data gets load*/
+
+.loader-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 4px solid rgba(139, 30, 30, 0.2);
+  border-top-color: #8b1e1e;
+  animation: spin 1s linear infinite;
+}
+
+.loader-text {
+  font-size: 38px;
+  color: #6f6558;
+  letter-spacing: 0.05em;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Reflect your emotion plus button*/
+
+.write-emoji {
+  position: fixed;
+  top: 100px;
+  right: 80px;
+
+  font-size: 50px;   /* control size */
+  cursor: pointer;
+
+  z-index: 1000;
+  user-select: none;
+
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.write-emoji:hover {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
