@@ -1,4 +1,4 @@
-import streamlit as st
+from fastapi import FastAPI
 import requests
 
 
